@@ -1,0 +1,25 @@
+{
+  "name": "intro-to-vue-3",
+  "version": "1.0.0",
+  "description": "Vue3 introduction",
+  "main": "main.js",
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bassem97/Intro-to-Vue-3.git"
+  },
+  "keywords": [
+    "Vue3"
+  ],
+  "author": "BASSEM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bassem97/Intro-to-Vue-3/issues"
+  },
+  "homepage": "https://github.com/bassem97/Intro-to-Vue-3#readme"
+}
