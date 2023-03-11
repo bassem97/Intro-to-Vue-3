@@ -54,6 +54,8 @@ app.component("product-display", {
 
       </div>
     </div>
+    <review-list v-if="reviews.length"  :reviews="reviews"></review-list>
+    <review-form @review-submitted="addReview"> </review-form>
     </div>
     `,
 
@@ -77,6 +79,8 @@ app.component("product-display", {
           quantity: 0,
         },
       ],
+      reviews: [],
+
       isActive: false,
       activeClass: "active",
 
@@ -93,6 +97,9 @@ app.component("product-display", {
     },
     updateVariant(index) {
       this.selectedVariant = index;
+    },
+    addReview(productReview) {
+      this.reviews.push(productReview);
     },
   },
 
