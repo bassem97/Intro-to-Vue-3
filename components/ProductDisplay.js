@@ -32,14 +32,25 @@ app.component("product-display", {
             :class="{ active: index === selectedVariant }"
             :style="{ backgroundColor: variant.color }"
         ></div>
-        <button
+        <div class="buttons">
+          <button
             class="button"
             :class="{ disabledButton: !inStock }"
             :disabled="!inStock"
+            @click="addToCart"
         >
-          <span v-on:click="addToCart">+</span>Add to Cart
-          <span v-on:click="removeFromCart">-</span>
+          Add to Cart
         </button>
+          <button
+              class="button"
+              :disabled="!inStock"
+                @click="removeFromCart"
+          >
+            Remove from Cart
+          </button>
+          
+        </div>
+      
 
       </div>
     </div>
@@ -75,10 +86,10 @@ app.component("product-display", {
   },
   methods: {
     addToCart() {
-      this.cart += 1;
+      this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
     },
     removeFromCart() {
-      this.cart === 0 ? (this.cart = 0) : (this.cart -= 1);
+      this.$emit("remove-from-cart", this.variants[this.selectedVariant].id);
     },
     updateVariant(index) {
       this.selectedVariant = index;
