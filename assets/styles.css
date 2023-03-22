@@ -39,6 +39,7 @@ body {
   margin-top: 8px;
   border: 2px solid #d8d8d8;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .disabledButton {
@@ -179,4 +180,8 @@ ul {
   .review-form {
     width: 90%;
   }
+}
+
+.active {
+  border: 2px solid #d31717;
 }
