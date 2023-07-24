@@ -20,6 +20,7 @@
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+            <p v-show="inventory > 10">In Stock</p>
             <h5>{{ description }}</h5>
           </div>
         </div>
