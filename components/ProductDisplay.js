@@ -18,6 +18,9 @@ app.component("product-display", {
 
         <p v-if="inStock">In Stock</p>
         <p v-else>Out of stock</p>
+        
+        <p><b>Shipping</b >: {{ shipping }}</p>
+        
         <ul>
           <li v-for="detail in details">{{ detail }}</li>
         </ul>
@@ -38,7 +41,6 @@ app.component("product-display", {
           <span v-on:click="removeFromCart">-</span>
         </button>
 
-        <div v-for="size in sizes">{{ size }}</div>
       </div>
     </div>
     </div>
@@ -64,7 +66,6 @@ app.component("product-display", {
           quantity: 0,
         },
       ],
-      sizes: ["S", "M", "L", "XL"],
       isActive: false,
       activeClass: "active",
 
@@ -93,6 +94,9 @@ app.component("product-display", {
     },
     inStock() {
       return this.variants[this.selectedVariant].quantity;
+    },
+    shipping() {
+      return this.premium ? "Free" : 2.99;
     },
   },
 });
